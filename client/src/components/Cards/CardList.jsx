@@ -14,7 +14,7 @@ export function CardsList() {
     <div className="min-h-screen h-auto flex flex-wrap content-center justify-center items-center mt-16 mb-16">
 
       {results.map((character) => (
-        <Card character={character}></Card>
+        <Card key={character.id} character={character}></Card>
       ))}
 
       
