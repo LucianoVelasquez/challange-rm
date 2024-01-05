@@ -17,7 +17,9 @@ function App() {
 
           <Route path="/" element={<Project/>} ></Route>
           <Route path={"/details/:id"}  element={<Details/>} ></Route>
+          <Route path={"/details/:id"}  element={<Details/>} ></Route>
             
+
         </Routes>
       </BrowserRouter>
     </ApolloProvider>
