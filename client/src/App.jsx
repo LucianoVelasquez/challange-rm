@@ -1,17 +1,13 @@
 import "./App.css";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Project } from "./pages/Project";
 import { Details } from "./pages/Details";
-
-const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql",
-  cache: new InMemoryCache(),
-});
+import { Provider } from 'react-redux';
+import { BrowserRouter,Route,Routes } from "react-router-dom";
+import store from './redux/store';
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
 
@@ -22,7 +18,8 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-    </ApolloProvider>
+    </Provider>
+
   );
 }
 

@@ -1,23 +1,33 @@
 import { Card } from "./Card";
-import { useQuery } from "@apollo/client";
-import { GET_ALLCHARACTER } from "../../graphql/characters";
+import { Pagination } from "../Pagination/Pagination";
+import { getAllCharacters } from "../../redux/actions"
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from "react";
 
 export function CardsList() {
-  const { loading, error, data } = useQuery(GET_ALLCHARACTER);
 
-  if (loading) return <p>loading</p>;
-  if (error) return <p>Error</p>;
+  const allCharacters = useSelector((state) => state.characters);
+  const dispatch = useDispatch();
 
-  const { results } = data.characters;
+  useEffect(()=>{
+    dispatch(getAllCharacters())
+  },[])
 
+  console.log(allCharacters);
   return (
-    <div className="min-h-screen h-auto flex flex-wrap content-center justify-center items-center mt-16 mb-16">
+    <>
+       <div className="min-h-screen h-auto flex flex-wrap content-center justify-center items-center mt-16 mb-16">
+         {
+        allCharacters.length > 0?
+         allCharacters.map((character) => (
+          <Card key={character.id} character={character}></Card>
+        )):
+          <h1>No existen personajes.</h1>
+        } 
+      </div> 
 
-      {results.map((character) => (
-        <Card key={character.id} character={character}></Card>
-      ))}
+      <Pagination></Pagination>
 
-      
-    </div>
+    </>
   );
 }
