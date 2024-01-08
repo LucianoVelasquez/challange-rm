@@ -1,10 +1,13 @@
 import { gql } from "@apollo/client";
 
-export const GET_ALLCHARACTER = gql`
+export const GET_ALLCHARACTER = () => gql`
   {
     characters(filter: { name: "" }) {
       info {
         count
+        pages
+        next
+        prev
       }
       results {
         id
@@ -26,22 +29,80 @@ export const GET_ALLCHARACTER = gql`
   }
 `;
 
-export const GET_CHARACTER_BYID = (id) => qgl`{
-  character(id:${id}) {
-    info {
-      count
-    }
-    results {
-      id
-      name
-      status
-      species
-      gender
-      origin {
-        name
+export const GET_CHARACTER_BYPAGE = (value, { name }) => gql`
+  {
+    characters(filter: { name: "${name}"},page:${value}) {
+      info {
+        count
+        pages
+        next
+        prev
       }
-      image
+      results {
+        id
+        name
+        status
+        gender
+        species
+        type
+        location {
+          name
+        }
+        origin {
+          name
+          dimension
+        }
+        image
+      }
     }
   }
-}
+`;
+
+export const GET_CHARACTER_BYNAME = (value) => gql`
+  {
+    characters(filter: { name: "${value}" }) {
+      info {
+        count
+        pages
+        next
+        prev
+      }
+      results {
+        id
+        name
+        status
+        gender
+        species
+        type
+        location {
+          name
+        }
+        origin {
+          name
+          dimension
+        }
+        image
+      }
+    }
+  }
+`;
+
+export const GET_CHARACTER_BYID = (id) => gql`{
+  character(id:${id}) {
+        id
+        name
+        status
+        gender
+        species
+        type
+        location {
+          name
+        }
+        origin {
+          name
+          dimension
+        }
+        image
+      }
+  }
 `;

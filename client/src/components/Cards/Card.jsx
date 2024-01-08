@@ -10,9 +10,7 @@ export function Card({ character }) {
    document.getElementById(`my-modal-${value}`).showModal()
  
   }
-
   
-
   return (
     <div
       onClick={(e) => handleClick(e)}
