@@ -1,7 +1,7 @@
 # Desafío para Dev
 
 Nombre postulante: Luciano Velasquez.
-Link a la app en producción: pronto..
+Link a la app en producción: [challange-rm.vercel.app/](https://challange-rm.vercel.app/)
 
 ## Instrucciones
 

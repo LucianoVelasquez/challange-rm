@@ -33,7 +33,7 @@ export function Nav(){
               <img src="https://raw.githubusercontent.com/LucianoVelasquez/portfolio/main/src/components/Hero/avatar3.png" alt="portafolio"/>
             </a>
           </div>
-        </div> 
+        </div>
       </div>
 
       <div className="navbar-center">
