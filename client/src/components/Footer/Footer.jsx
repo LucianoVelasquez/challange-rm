@@ -19,16 +19,23 @@ export function Footer(){
       <nav className="grid-flow-col gap-3 md:place-self-center md:justify-self-end">
         <a href="https://www.linkedin.com/in/lv-dev/">
           <img
-            className="w-14 h-14"
+            className="w-12 h-14"
             src="https://www.svgrepo.com/show/448234/linkedin.svg"
           ></img>
         </a>
         <a href="https://github.com/LucianoVelasquez">
           <img
-            className={"w-10 h-14"}
+            className="w-11 h-14"
             src={"https://www.svgrepo.com/show/445786/github.svg"}
           ></img>
         </a>
+        <div className="avatar">
+            < div className="w-12 mt-1 mask mask-squircle">
+              <a className="cursor-pointer" href="https://veldev.vercel.app/" target="_blank">
+                <img src="https://raw.githubusercontent.com/LucianoVelasquez/portfolio/main/src/components/Hero/avatar3.png" alt="portafolio"/>
+              </a>
+            </div>
+          </div>
       </nav>
     </footer>
   );

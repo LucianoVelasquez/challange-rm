@@ -27,6 +27,13 @@ export function Nav(){
     <div className="navbar bg-base-300 absolute top-0 h-12">
 
       <div className="navbar-start">
+        <div className="avatar">
+          < div className="w-16 mask mask-squircle">
+            <a className="cursor-pointer" href="https://veldev.vercel.app/" target="_blank">
+              <img src="https://raw.githubusercontent.com/LucianoVelasquez/portfolio/main/src/components/Hero/avatar3.png" alt="portafolio"/>
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="navbar-center">
