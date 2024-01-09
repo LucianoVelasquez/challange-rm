@@ -27,18 +27,6 @@ export function Nav(){
     <div className="navbar bg-base-300 absolute top-0 h-12">
 
       <div className="navbar-start">
-      <a href="https://www.linkedin.com/in/lv-dev/">
-          <img
-            className="w-12 h-12"
-            src="https://www.svgrepo.com/show/448234/linkedin.svg"
-          ></img>
-        </a>
-        <a href="https://github.com/LucianoVelasquez">
-          <img
-            className="w-10 h-14"
-            src={"https://www.svgrepo.com/show/445786/github.svg"}
-          ></img>
-        </a>  
       </div>
 
       <div className="navbar-center">
