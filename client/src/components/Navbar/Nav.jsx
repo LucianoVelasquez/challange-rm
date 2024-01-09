@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCharactersByName,getAllCharacters } from "../../redux/actions";
+import { ThemeController } from "../ThemeController/ThemeController";
 
 export function Nav(){
 
@@ -23,10 +24,21 @@ export function Nav(){
   }
 
   return (
-    <div className="navbar bg-base-300 absolute z-30 top-0">
+    <div className="navbar bg-base-300 absolute top-0 h-12">
 
       <div className="navbar-start">
-        <p>inicio</p>
+      <a href="https://www.linkedin.com/in/lv-dev/">
+          <img
+            className="w-12 h-12"
+            src="https://www.svgrepo.com/show/448234/linkedin.svg"
+          ></img>
+        </a>
+        <a href="https://github.com/LucianoVelasquez">
+          <img
+            className="w-10 h-14"
+            src={"https://www.svgrepo.com/show/445786/github.svg"}
+          ></img>
+        </a>  
       </div>
 
       <div className="navbar-center">
@@ -37,7 +49,7 @@ export function Nav(){
       </div>
       
       <div className="navbar-end z-30">
-        <p>Fin</p>
+        <ThemeController></ThemeController>
       </div>
     </div>
   );

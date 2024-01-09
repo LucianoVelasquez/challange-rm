@@ -1,22 +1,24 @@
 import { Card } from "./Card";
-import { Pagination } from "../Pagination/Pagination";
-import { getAllCharacters } from "../../redux/actions"
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
+
+import { getAllCharacters,getAllSpecies } from "../../redux/actions"
 
 export function CardsList() {
 
   const allCharacters = useSelector((state) => state.characters);
+  const { filter } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(()=>{
     dispatch(getAllCharacters())
+    dispatch(getAllSpecies(filter))
+
   },[])
 
-  console.log(allCharacters);
   return (
     <>
-       <div className="min-h-screen h-auto flex flex-wrap content-center justify-center items-center mt-16 mb-16">
+       <div className="min-h-screen h-auto flex flex-wrap content-center justify-center items-center  mb-2">
          {
         allCharacters.length > 0?
          allCharacters.map((character) => (
@@ -25,9 +27,6 @@ export function CardsList() {
           <h1>No existen personajes.</h1>
         } 
       </div> 
-
-      <Pagination></Pagination>
-
     </>
   );
 }
