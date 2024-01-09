@@ -14,10 +14,8 @@ export function Pagination() {
     }else{
       dispatch(getCharactersByPage(info.prev,filter))
     }
-    console.log(info);
-  }
 
-  
+  }
 
   return (
     <>
