@@ -10,7 +10,7 @@ export function Detail({ character }) {
             {character.name}
           </h1>
           <p>
-            <strong>Status:</strong> {character.gender}
+            <strong>Gender:</strong> {character.gender}
           </p>
           <p>
             <strong>Species:</strong> {character.species}

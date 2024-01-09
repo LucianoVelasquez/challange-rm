@@ -27,18 +27,13 @@ export function Nav(){
     <div className="navbar bg-base-300 absolute top-0 h-12">
 
       <div className="navbar-start">
-      <a href="https://www.linkedin.com/in/lv-dev/">
-          <img
-            className="w-12 h-12"
-            src="https://www.svgrepo.com/show/448234/linkedin.svg"
-          ></img>
-        </a>
-        <a href="https://github.com/LucianoVelasquez">
-          <img
-            className="w-10 h-14"
-            src={"https://www.svgrepo.com/show/445786/github.svg"}
-          ></img>
-        </a>  
+        <div className="avatar">
+          < div className="w-16 mask mask-squircle">
+            <a className="cursor-pointer" href="https://veldev.vercel.app/" target="_blank">
+              <img src="https://raw.githubusercontent.com/LucianoVelasquez/portfolio/main/src/components/Hero/avatar3.png" alt="portafolio"/>
+            </a>
+          </div>
+        </div> 
       </div>
 
       <div className="navbar-center">
